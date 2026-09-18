@@ -1,0 +1,385 @@
+/* ═══════════════════════════════════════════════════════════════
+   Notice Popup Styles - Ported from legacy project
+   ═══════════════════════════════════════════════════════════════ */
+
+/* Overlay Layer */
+.popupLayer {
+  overflow: auto;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 55555;
+  display: block;
+  margin: 0 auto;
+  width: 100%;
+  height: 100%;
+  min-height: 100%;
+  background-color: rgba(0, 0, 0, 0.8);
+}
+
+.popupLayer::after {
+  content: "";
+  display: table;
+  width: 100%;
+}
+
+/* Custom Scrollbar */
+.popupLayer::-webkit-scrollbar {
+  width: 1px;
+  height: 5px;
+  box-shadow: 0 0 1px 1px rgba(0, 0, 0, 0.5);
+}
+
+.popupLayer::-webkit-scrollbar-track {
+  background-color: #666;
+}
+
+.popupLayer::-webkit-scrollbar-thumb {
+  background-color: #666;
+  border: 1px solid #4d4d4d;
+  transition: 0.5s;
+}
+
+.popupLayer::-webkit-scrollbar-thumb:hover {
+  opacity: 0.9;
+}
+
+/* Container */
+.popupContainer {
+  position: relative;
+  margin: 0 auto;
+  width: 100%;
+  height: 100%;
+}
+
+.popupContainer::after {
+  content: "";
+  display: table;
+  width: 100%;
+}
+
+/* Popup Box */
+.popupBox {
+  position: absolute;
+  z-index: 4444;
+  top: 35px;
+  left: 0;
+  transition: opacity 0.5s, visibility 0.5s, background-color 0.5s;
+  border: 2px solid transparent;
+  border-top-width: 0;
+  color: #666;
+  width: auto;
+  height: auto;
+}
+
+.popupBox::after {
+  content: "";
+  display: table;
+  width: 100%;
+}
+
+/* Header */
+.popupHeader {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin: 0 auto;
+  padding: 10px;
+  width: 100%;
+  color: #f2f2f2;
+  border-top-left-radius: 5px;
+  border-top-right-radius: 5px;
+  background: rgba(51, 51, 51, 1);
+  box-shadow: 3px 3px 5px #000;
+  box-sizing: border-box;
+}
+
+/* Contents */
+.popupContents {
+  margin: 0 auto 15px;
+  padding: 10px;
+  color: #fff;
+  background: #171717;
+  box-shadow: inset 0 0 0 1px rgba(0, 0, 0, 0), 0 1px 2px 0 rgba(0, 0, 0, 0.75);
+  background-image: url("/img/patternbg.png");
+  background-position: center center;
+  background-repeat: repeat;
+  border-bottom-left-radius: 5px;
+  border-bottom-right-radius: 5px;
+  overflow: auto;
+  width: auto;
+  height: auto;
+  min-width: 300px;
+  max-width: 1200px;
+  min-height: 200px;
+  box-sizing: border-box;
+}
+
+/* Header Titles */
+.popupHeader h2,
+.popupHeader h3 {
+  display: block;
+  float: left;
+  padding: 3px 8px;
+  text-align: center;
+  font-weight: 700;
+  color: #fff;
+  border-radius: 5px;
+}
+
+/* Today Hide Button */
+.poptodayend {
+  cursor: pointer;
+  display: block;
+  float: left;
+  padding: 3px 8px;
+  text-align: center;
+  font-size: 8pt;
+  font-weight: 700;
+  color: #fff;
+  background: #626262;
+  box-shadow: rgba(0, 0, 0, 0.75) 1px 1px 3px;
+  border: 1px solid transparent;
+  border-radius: 3px;
+  transition: background-color 0.2s;
+}
+
+.poptodayend:hover {
+  background: #777;
+}
+
+/* Close Button */
+.popclose {
+  cursor: pointer;
+  display: block;
+  float: right;
+  padding: 3px 8px;
+  text-align: center;
+  font-size: 8pt;
+  font-weight: 700;
+  color: #fff;
+  background: #626262;
+  box-shadow: rgba(0, 0, 0, 0.75) 1px 1px 3px;
+  border: 1px solid transparent;
+  border-radius: 3px;
+  transition: background-color 0.2s;
+}
+
+.popclose:hover {
+  background: #777;
+}
+
+/* Content Area */
+.popcontent {
+  line-height: 1.3;
+  font-size: 95%;
+  font-family: "Gmarket Sans Bold", sans-serif;
+}
+
+.popcontent::after {
+  content: "";
+  display: table;
+  width: 100%;
+}
+
+.popcontent p {
+  margin: 0 auto;
+  padding: 0;
+  line-height: inherit;
+}
+
+.popcontent p.empty {
+  padding: 150px 0;
+  color: #fff;
+}
+
+.popcontent img {
+  display: block;
+  max-width: 100%;
+  height: auto;
+}
+
+/* Text Content (when no image) */
+.textContent {
+  padding: 20px;
+  min-height: 150px;
+}
+
+.contentTitle {
+  margin: 0 0 15px 0;
+  padding-bottom: 12px;
+  font-size: 16px;
+  font-weight: 700;
+  color: #ffd700;
+  border-bottom: 1px solid rgba(255, 215, 0, 0.3);
+  font-family: "Gmarket Sans Bold", sans-serif;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.contentTitle::before {
+  content: "📢";
+  font-size: 18px;
+}
+
+.contentText {
+  font-size: 14px;
+  line-height: 1.8;
+  color: #e0e0e0;
+  word-break: keep-all;
+  white-space: pre-wrap;
+}
+
+.contentText p {
+  margin: 0 0 10px 0;
+}
+
+.contentText strong,
+.contentText b {
+  color: #ffd700;
+  font-weight: 700;
+}
+
+.contentText a {
+  color: #4fc3f7;
+  text-decoration: underline;
+}
+
+.contentText a:hover {
+  color: #81d4fa;
+}
+
+/* ═══════════════════════════════════════════════════════════════
+   Desktop Styles (min-width: 768px)
+   ═══════════════════════════════════════════════════════════════ */
+
+@media screen and (min-width: 768px) {
+  /* Single popup - centered */
+  .popupLayerSingle .popupContainer .popupBox {
+    left: 50%;
+    transform: translateX(-50%);
+  }
+
+  /* Multiple popups - flex layout */
+  .popupLayerMulti .popupContainer {
+    width: 1750px;
+    max-width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+    padding: 20px;
+  }
+
+  .popupBoxMulti {
+    position: relative;
+    overflow: hidden;
+    top: 0 !important;
+    left: 0 !important;
+    flex: 0 0 auto;
+  }
+
+  .popupBoxMulti .popupContents .popcontent {
+    overflow: hidden;
+  }
+}
+
+/* ═══════════════════════════════════════════════════════════════
+   Mobile Styles (max-width: 767px)
+   ═══════════════════════════════════════════════════════════════ */
+
+@media screen and (max-width: 767px) {
+  /* Single popup */
+  .popupLayerSingle .popupContainer .popupBox {
+    left: 0;
+    right: 0;
+    margin: 0 10px;
+  }
+
+  .popupBox {
+    width: auto !important;
+    min-width: auto !important;
+  }
+
+  .popupHeader {
+    cursor: default !important;
+  }
+
+  /* Multiple popups - stacked vertically */
+  .popupLayerMulti .popupContainer {
+    counter-reset: step-counter;
+    padding: 10px;
+  }
+
+  .popupBoxMulti {
+    position: relative !important;
+    left: 0 !important;
+    right: 0 !important;
+    margin-bottom: 15px;
+  }
+
+  /* Stack positions for mobile (fallback if using absolute positioning) */
+  .popmulti0 {
+    top: 35px !important;
+    z-index: 20;
+  }
+
+  .popmulti1 {
+    top: 115px !important;
+    z-index: 21;
+  }
+
+  .popmulti2 {
+    top: 195px !important;
+    z-index: 22;
+  }
+
+  .popmulti3 {
+    top: 275px !important;
+    z-index: 23;
+  }
+
+  .popmulti4 {
+    top: 355px !important;
+    z-index: 24;
+  }
+
+  .popmulti5 {
+    top: 435px !important;
+    z-index: 25;
+  }
+
+  .popupContents .popcontent img {
+    display: inline-block !important;
+    max-width: 100% !important;
+    height: auto !important;
+  }
+
+  /* Adjust popup contents for mobile */
+  .popupContents {
+    min-width: auto;
+    min-height: auto;
+    max-width: 100%;
+  }
+}
+
+/* ═══════════════════════════════════════════════════════════════
+   Animation
+   ═══════════════════════════════════════════════════════════════ */
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.popupBox {
+  animation: fadeIn 0.3s ease-out;
+}

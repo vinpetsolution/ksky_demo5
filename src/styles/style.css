@@ -1,0 +1,390 @@
+@charset "utf-8";
+
+/* 초기화 */
+html {overflow:auto; background-color: #000000;}
+body {margin:0;padding:0; -webkit-font-smoothing: antialiased;  font-smoothing: antialiased; background-color: #000000; }
+span,strong,dd,dt,td,th,em,p,button,input,textarea,select{} 
+html, h1, h2, h3, h4, h5, h6, form, fieldset, img {margin:0;padding:0;border:0}
+h1, h2, h3, h4, h5, h6 {font-size:1em;}
+article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, section {display:block}
+legend {position:absolute;font-size:0;line-height:0;text-indent:-9999em;overflow:hidden}
+label, input, select, img {vertical-align:middle}
+input, button {margin:0;padding:0;font-size:1em;border:0;}
+button {cursor:pointer}
+button {border-radius:0;font-size:1em;-webkit-appearance:none}
+textarea, select {font-size:1em}
+p {margin:0;padding: 0;word-break:break-all}
+hr {display:none}
+pre {overflow-x:scroll;font-size:1.1em}
+a:link, a:visited {text-decoration:none}
+a:hover, a:focus, a:active {}
+li,ul,ol,dt,dl,dd{list-style:none;padding:0;margin:0;}
+table {border-collapse:collapse;border-spacing:0;}
+.hidden {overflow:hidden; background:none; width:0; height:0; margin:0; padding:0; visibility:hidden; line-height:0;}
+table caption{overflow:hidden; background:none; width:0; height:0; margin:0; padding:0; visibility:hidden; line-height:0;}
+iframe{margin:0;padding:0;border:none;}
+
+*, :after, :before {
+  -webkit-box-sizing:border-box;
+  -moz-box-sizing:border-box;
+  box-sizing:border-box;
+}
+
+input[type=text],input[type=password], textarea {
+-webkit-transition:all 0.30s ease-in-out;
+-moz-transition:all 0.30s ease-in-out;
+-ms-transition:all 0.30s ease-in-out;
+-o-transition:all 0.30s ease-in-out;
+outline:none;
+}
+
+input[type=text]:focus,input[type=password]:focus, textarea:focus,select:focus {
+-webkit-box-shadow:0 0 5px #9ed4ff;
+-moz-box-shadow:0 0 5px #9ed4ff;
+box-shadow:0 0 5px #9ed4ff;
+border:1px solid #558ab7 !important;
+}
+
+
+img[src$=".gif"], img[src$=".png"], img[src$=".jpg"] {
+  image-rendering: -moz-crisp-edges; /* Firefox */
+  image-rendering: -o-crisp-edges; /* Opera */
+  image-rendering: -webkit-optimize-contrast;/* Webkit (non-standard naming) */
+  image-rendering: crisp-edges;
+  -ms-interpolation-mode: nearest-neighbor; /* IE (non-standard property) */
+   transform:translateZ(0);
+   backface-visibility: hidden;
+}
+
+.margin5 { display: inline-block; height: 5px; width: 100%; }
+
+.button-87 {
+	margin: 0;
+	padding: 0 20px;
+	width: 100%;
+	height: 50px;
+	text-align: center;
+	border-radius: 5px;
+	display: block;
+	border: 0px;
+	border: 1px solid #333333;
+	background: linear-gradient(#45484c, #000000);
+}
+/*
+.button-87:hover {
+	background-position: right center;
+	color: #fff;
+	text-decoration: none;
+}
+.button-87:active {
+	transform: scale(0.95);
+}
+*/
+.button-87 span{
+	background-image: linear-gradient( to right top, #462523 0, #cb9b51 22%, #f6e27a 45%, #f6f2c0 50%, #f6e27a 55%, #cb9b51 78%, #462523 100% );
+    color: transparent;
+    -webkit-background-clip: text;
+	font-family: 'Gmarket Sans Bold', sans-serif;
+	letter-spacing: -1px;
+	font-size: 1.75em;
+	line-height: 53px;
+
+}
+
+.cd-morph-dropdown { position: relative; }
+.cd-morph-dropdown::before { content: 'mobile'; display: none; }
+
+@media only screen and (min-width: 480px) {
+	.cd-morph-dropdown {
+		position: fixed;
+		left: 0;
+		top: 0;
+		width: 100%;
+		padding: 0;
+		text-align: center;
+		background-color: transparent;
+		z-index: 10;
+	}
+}
+
+
+@font-face {
+	font-family: "Gotham-Black";
+	src:url(/font/Gotham-Black.eot);
+	src: url(/font/Gotham-Black.woff);
+}
+@font-face {
+	font-family: "Gotham-Book";
+	src:url(/font/Gotham-Book.eot);
+	src: url(/font/Gotham-Book.woff);
+}
+@font-face {
+	font-family: 'Pangram';
+	font-style: normal;
+	font-weight: 100;
+	src: url(/font/Pangram-Light.woff) format('woff');
+}
+@font-face {
+	font-family: 'Pangram';
+	font-style: normal;
+	font-weight: 200;
+	src: url(/font/Pangram-ExtraLight.woff) format('woff');
+}
+@font-face {
+	font-family: 'Pangram';
+	font-style: normal;
+	font-weight: 300;
+	src: url(/font/Pangram-Regular.woff) format('woff');
+}
+@font-face {
+	font-family: 'Pangram';
+	font-style: normal;
+	font-weight: 400;
+	src: url(/font/Pangram-Normal.woff) format('woff');
+}
+@font-face {
+	font-family: 'Pangram';
+	font-style: normal;
+	font-weight: 500;
+	src: url(/font/Pangram-Medium.woff) format('woff');
+}
+@font-face {
+	font-family: 'Pangram';
+	font-style: normal;
+	font-weight: 600;
+	src: url(/font/Pangram-Bold.woff) format('woff');
+}
+@font-face {
+    font-family: 'Gmarket Sans Bold';    font-style: normal;    font-weight: 700;
+    src: local('Gmarket Sans Bold'), local('GmarketSans-Bold'),
+    url('/font/GmarketSansBold.woff2') format('woff2'), /* Chrome 26+, Opera 23+, Firefox 39+ */
+    url('/font/GmarketSansBold.woff') format('woff'); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
+}
+@font-face {
+    font-family: 'Gmarket Sans Medium';    font-style: normal;    font-weight: 500;
+    src: local('Gmarket Sans Medium'), local('GmarketSans-Medium'),
+    url('/font/GmarketSansMedium.woff2') format('woff2'), /* Chrome 26+, Opera 23+, Firefox 39+ */
+    url('/font/GmarketSansMedium.woff') format('woff'); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
+}
+@font-face {
+    font-family: 'Gmarket Sans Light';    font-style: normal;    font-weight: 300;
+    src: local('Gmarket Sans Light'), local('GmarketSans-Light'),
+    url('/font/GmarketSansLight.woff2') format('woff2'), /* Chrome 26+, Opera 23+, Firefox 39+ */
+    url('/font/GmarketSansLight.woff') format('woff'); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
+}
+@font-face {
+  font-family: 'Nanum Gothic';
+  font-style: normal;
+  font-weight: 400;
+  src: url('/font/nanum-gothic-v14-korean_latin-regular.eot'); /* IE9 Compat Modes */
+  src: local('NanumGothic'),
+       url('/font/nanum-gothic-v14-korean_latin-regular.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
+       url('/font/nanum-gothic-v14-korean_latin-regular.woff2') format('woff2'), /* Super Modern Browsers */
+       url('/font/nanum-gothic-v14-korean_latin-regular.woff') format('woff'), /* Modern Browsers */
+       url('/font/nanum-gothic-v14-korean_latin-regular.ttf') format('truetype'), /* Safari, Android, iOS */
+       url('/font/nanum-gothic-v14-korean_latin-regular.svg#NanumGothic') format('svg'); /* Legacy iOS */
+}
+@font-face {
+  font-family: 'Nanum Gothic';
+  font-style: normal;
+  font-weight: 700;
+  src: url('/font/nanum-gothic-v14-korean_latin-700.eot'); /* IE9 Compat Modes */
+  src: local('NanumGothic Bold'), local('NanumGothic-Bold'),
+       url('/font/nanum-gothic-v14-korean_latin-700.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
+       url('/font/nanum-gothic-v14-korean_latin-700.woff2') format('woff2'), /* Super Modern Browsers */
+       url('/font/nanum-gothic-v14-korean_latin-700.woff') format('woff'), /* Modern Browsers */
+       url('/font/nanum-gothic-v14-korean_latin-700.ttf') format('truetype'), /* Safari, Android, iOS */
+       url('/font/nanum-gothic-v14-korean_latin-700.svg#NanumGothic') format('svg'); /* Legacy iOS */
+}
+@font-face {
+  font-family: 'Nanum Gothic';
+  font-style: normal;
+  font-weight: 800;
+  src: url('/font/nanum-gothic-v14-korean_latin-800.eot'); /* IE9 Compat Modes */
+  src: local('NanumGothic ExtraBold'), local('NanumGothic-ExtraBold'),
+       url('/font/nanum-gothic-v14-korean_latin-800.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
+       url('/font/nanum-gothic-v14-korean_latin-800.woff2') format('woff2'), /* Super Modern Browsers */
+       url('/font/nanum-gothic-v14-korean_latin-800.woff') format('woff'), /* Modern Browsers */
+       url('/font/nanum-gothic-v14-korean_latin-800.ttf') format('truetype'), /* Safari, Android, iOS */
+       url('/font/nanum-gothic-v14-korean_latin-800.svg#NanumGothic') format('svg'); /* Legacy iOS */
+}
+@font-face {
+	font-family: 'OngothicRegular';
+	font-style: normal;
+	src: url(/font/KoddiUDOnGothic-Regular.woff) format('woff');
+}
+@font-face {
+	font-family: 'OngothicBold';
+	font-style: normal;
+	src: url(/font/KoddiUDOnGothic-Bold.woff) format('woff');
+}
+@font-face {
+	font-family: 'OngothicExtraBold';
+	font-style: normal;
+	src: url(/font/KoddiUDOnGothic-ExtraBold.woff) format('woff');
+}
+
+.ongothic_r {
+	font-family: 'OngothicRegular', sans-serif; 
+}
+.ongothic_b {
+	font-family: 'OngothicBold', sans-serif; 
+}
+.ongothic_eb {
+	font-family: 'OngothicExtraBold', sans-serif; 
+}
+.gfont_bold{
+	font-family: 'Gmarket Sans Bold', sans-serif; 
+}
+.gfont_medium{
+	font-family: 'Gmarket Sans Medium', sans-serif; 
+}
+.gfont_light{
+	font-family: 'Gmarket Sans Light', sans-serif; 
+}
+.notosanskr100 {
+	font-family: 'Noto Sans KR', sans-serif;
+	font-weight: 100;
+}
+.notosanskr200 {
+	font-family: 'Noto Sans KR', sans-serif;
+	font-weight: 200;
+}
+.notosanskr300 {
+	font-family: 'Noto Sans KR', sans-serif;
+	font-weight: 300;
+}
+.notosanskr400 {
+	font-family: 'Noto Sans KR', sans-serif;
+	font-weight: 400;
+}
+.notosanskr500 {
+	font-family: 'Noto Sans KR', sans-serif;
+	font-weight: 500;
+}
+.notosanskr600 {
+	font-family: 'Noto Sans KR', sans-serif;
+	font-weight: 600;
+}
+.notosanskr700 {
+	font-family: 'Noto Sans KR', sans-serif;
+	font-weight: 700;
+}
+.notosanskr800 {
+	font-family: 'Noto Sans KR', sans-serif;
+	font-weight: 800;
+}
+.notosanskr900 {
+	font-family: 'Noto Sans KR', sans-serif;
+	font-weight: 900;
+}
+.nanum {
+	font-family: 'Nanum Gothic', sans-serif; 
+}
+.eng_pen {
+	font-family: 'Nanum Gothic', sans-serif; 
+}
+
+/* Badge blink animation */
+@keyframes badge-blink {
+  0%, 100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+  50% {
+    opacity: 0.6;
+    transform: scale(1.1);
+  }
+}
+
+.badge-blink {
+  animation: badge-blink 1.2s ease-in-out infinite;
+  color: #ff4444 !important;
+  text-shadow: 0 0 8px rgba(255, 68, 68, 0.6);
+}
+
+/* QnA badge - override default badge-blink color */
+.qna-badge.badge-blink {
+  color: #fff !important;
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.5);
+}
+
+/* Tab badge style */
+.tab-badge {
+  display: inline-block;
+  min-width: 18px;
+  height: 18px;
+  line-height: 18px;
+  padding: 0 5px;
+  margin-left: 6px;
+  font-size: 11px;
+  font-weight: bold;
+  text-align: center;
+  color: #fff;
+  background: linear-gradient(135deg, #ff6b6b, #ee5a5a);
+  border-radius: 9px;
+  box-shadow: 0 2px 4px rgba(255, 68, 68, 0.4);
+}
+
+/* Unread item styles */
+.unread-item {
+  background: linear-gradient(90deg, rgba(255, 100, 100, 0.15) 0%, rgba(255, 100, 100, 0.05) 100%);
+  border-left: 3px solid #ff6b6b;
+}
+
+.unread-title {
+  color: #ffcc00 !important;
+  font-weight: bold !important;
+}
+
+/* NEW badge for unread items */
+.new, .new-badge {
+  display: inline-block;
+  padding: 2px 6px;
+  margin-right: 6px;
+  font-size: 10px;
+  font-weight: bold;
+  color: #fff;
+  background: linear-gradient(135deg, #ff6b6b, #ee5a5a);
+  border-radius: 3px;
+  animation: badge-blink 1.2s ease-in-out infinite;
+  text-transform: uppercase;
+}
+
+/* Read status badge */
+.end {
+  color: #888 !important;
+}
+
+/* Notice unread styling */
+.promemo-row.unread-item {
+  background: linear-gradient(90deg, rgba(255, 100, 100, 0.15) 0%, rgba(255, 100, 100, 0.05) 100%);
+  border-left: 3px solid #ff6b6b;
+}
+
+.notice_text.unread-title {
+  color: #ffcc00 !important;
+  font-weight: bold !important;
+}
+
+/* Notice list - NEW badge position */
+.pr-memo-holder ul li.notice_text {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  gap: 10px;
+}
+
+.pr-memo-holder ul li.notice_text .notice-title-text {
+  flex: 1;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.pr-memo-holder ul li.notice_text .new-badge {
+  flex-shrink: 0;
+  margin-left: auto;
+  margin-right: 0;
+}
